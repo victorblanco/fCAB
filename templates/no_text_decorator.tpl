@@ -1,0 +1,1 @@
+<div class="no_text_decorator"><!-- #no_text# --></div>

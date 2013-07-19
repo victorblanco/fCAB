@@ -1,0 +1,74 @@
+<?
+
+class DebugController extends Controller{
+	
+	public function defaultAction(HashTable $cont, Http $http, Model $model){
+		$debug = Debug::loadDebug();
+		$dbg = array();
+		$i = 0;
+		$fi = new HashTable("value");
+		
+		foreach ($debug as $d){
+			$dbg[$i]["value"] = $d;
+			$i++;
+		}	
+		Debug::addBackTrace();
+		
+		$this->clases->Search->setHeaders(new HashTable("Debug"));
+		$this->clases->Search->setRS($dbg);
+		$this->clases->Search->setInput(false);
+		$this->clases->Search->setFields($fi);
+		$this->clases->Search->setForm(ControlForm::getDefault()->setName("formulario")->setMethod("POST"));
+		$cont->body = $this->clases->Search->getOutput();
+		
+		
+		
+	}
+	
+	public function queryAction(HashTable $cont, Http $http, Model $model){
+		$ds = App::getDS();
+		$query = (base64_decode(Http::get()->sql));
+		//$pr = new Paginator($ds, $query, 30, Http::r());
+		$resultado = $ds->exec($query);
+
+		/*if ($pr->getPrevLink()){ 
+			$this->controls->ControlToolbar->addButtonPrimary("atras","img/img_btn_atras.png","window.location='".$pr->getPrevLink()."'","Reward");
+		}
+		if ($pr->getNextLink()){
+			$this->controls->ControlToolbar->addButtonPrimary("adelante","img/img_btn_alante.png","window.location='".$pr->getNextLink()."'","Foward");
+		}*/
+		
+		$this->clases->Search->setHeaders(new HashTable($ds->getHeaders()));
+		$this->clases->Search->setRS($ds,$resultado);
+		$this->clases->Search->setInput(false);
+		$this->clases->Search->setForm(ControlForm::getDefault()->setName("formulario")->setMethod("POST"));
+		$cont->body = $this->clases->Search->getOutput();
+		$cont->toolbar = $query;
+	}
+	
+			
+	public function reportarAction(HashTable $cont, Http $http, Model $model){
+		$debug =  Debug::loadDebugSerialize();
+		$m = new Mail();
+		Log::add($debug);
+		$m->setFrom(APPNAME."@meditrial.es")
+			->addTo("victor.blanco84@gmail.com")
+			->addAdjuntoTxt($debug, APPNAME."_debug.txt")
+			->setAsunto(APPNAME."")->sendMail();
+
+	}
+
+	
+	/*public function getOutput($action){
+		$this->$action();
+		/*$debug = Debug::loadDebug();
+		foreach($debug as $type ){
+			foreach ($type as $value)
+				echo "$type => $value <br>";
+			
+		}
+	}*/
+	
+	
+	
+}

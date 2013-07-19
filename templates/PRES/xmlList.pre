@@ -1,0 +1,18 @@
+<?
+$this->vars['MAIN']['LINE']='';
+$this->vars['MAIN']['line']='';
+$this->bfuncs['MAIN']=create_function('$vars','return "".$vars["LINE"]."
+
+<table width=\\"50%\\" align=\\"center\\">
+	".$vars["line"]."
+</table>";');
+$this->vars['LINE']['description']='';
+$this->vars['LINE']['name']='';
+$this->vars['LINE']['value']='';
+$this->bfuncs['LINE']=create_function('$vars','return "
+<tr>
+	<td>".$vars["description"]."</td>
+ 	<td><input name=\\"".$vars["name"]."\\" value=\\"".$vars["value"]."\\" /></td>
+</tr>
+";');
+?>

@@ -1,0 +1,1 @@
+<tr><td class="toolsys" style="height:26"><table style="width:100%;height=26px;" border="0" cellspacing="0" cellpadding="0"><tr><td style="width:25%;"><!-- {primary} --></td><td style="width:75%;"><!-- {secundary} --></td></tr></table></td></tr>

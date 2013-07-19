@@ -1,0 +1,35 @@
+<tests>
+	<test method="post" controller="Registro">
+		<inputs>
+			<input name="nombre_men" value="hola"/>
+			<input name="idpais" value="-1"/>
+			<input name="usuario_men" value="0"/>
+		</inputs>
+		<results>
+			<result type="bd_count" ds="" caption="Inserta el usuario" query="select count(*) from usuarios where nombre_men = 'hola' " value="1" />
+			<result type="bd_compare" ds="" caption="Inserta todos los campos" query="select * from usuarios where nombre_men = 'hola' ">
+				<item name="nombre_men" type="=" value="hola" />
+				<item name="idpais" type="=" value="-1" />
+				<item name="usuario_men" type="&gt;"value="0" />
+				<item name="usuario_men" type="!=" value="" />
+				<item name="activos" type="=" value="0" />
+			</result>
+			<result type="class" caption="Compruebo el hash en ecs" class="CompruebaHashValidoTest" value="true">
+			<result type="class" caption="Compruebo si esta activo en ecs" class="CompruebaHashActivoTest" value="false">
+			<result type="compare" caption="Compruebo lo que devuelve la controller" type="=" value="ok" />
+		</results>
+	</test>
+	<test method="post" controller="Registro" action="activa">
+		<inputs>
+			<input name="id" value="1000"/>
+		</inputs>
+		<results>
+			<result type="bd_compare" caption="Inserta todos los campos" query="select * from usuarios where id = 1000 ">
+				<item name="activo" type="=" value="1" />
+			</result>
+			<result type="class" caption="Compruebo el hash en ecs" class="CompruebaHashValidoTest" value="true">
+			<result type="class" caption="Compruebo si esta activo en esc" class="CompruebaHashActivoTest" value="true">
+			<result type="compare" caption="Compruebo lo que devuelve la controller" type="!=" value="ko" />
+		</results>
+	</test>
+</tests>

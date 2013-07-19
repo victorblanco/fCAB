@@ -1,0 +1,59 @@
+<?
+$this->vars['MAIN']['LOADING']='';
+$this->vars['MAIN']['LOADING2']='';
+$this->vars['MAIN']['name']='';
+$this->vars['MAIN']['name']='';
+$this->vars['MAIN']['disparador']='';
+$this->vars['MAIN']['event']='';
+$this->vars['MAIN']['function_ini']='';
+$this->vars['MAIN']['loading_']='';
+$this->vars['MAIN']['url']='';
+$this->vars['MAIN']['type']='';
+$this->vars['MAIN']['extra']='';
+$this->vars['MAIN']['response']='';
+$this->vars['MAIN']['atributo']='';
+$this->vars['MAIN']['function_fin']='';
+$this->bfuncs['MAIN']=create_function('$vars','return "".$vars["LOADING"]."
+".$vars["LOADING2"]."
+
+<script language=\\"javascript\\">
+//CREATE POR CONTROLAJAX
+\\$(document).ready(register".$vars["name"].");
+function register".$vars["name"]."(){
+	try{
+		\\$(\\"".$vars["disparador"]."\\").".$vars["event"]."(function () {
+			".$vars["function_ini"]."
+			".$vars["loading_"]."			
+			\\$.ajax({
+				url: ".$vars["url"].",
+				cache: false,
+				type: \\"".$vars["type"]."\\",
+				".$vars["extra"]."
+				scriptCharset: \\"utf-8\\",
+				dataType: \\"text/html\\",
+				contentType: \\"application/x-www-form-urlencoded\\",
+				error: function(objeto, quepaso, otroobj){
+					alert(\\"Pasó siguiente: \\"+quepaso);
+				},
+				success: function(html){ 
+					\\$(\\"".$vars["response"]."\\").attr(\\"".$vars["atributo"]."\\",html);
+					".$vars["function_fin"]."		
+				}
+			});
+			return false;
+		});
+	}catch(e){alert(e);}
+}</script>
+";');
+$this->vars['LOADING']['divLoading']='';
+$this->vars['LOADING']['divLoading']='';
+$this->vars['LOADING']['loading']='';
+$this->bfuncs['LOADING']=create_function('$vars','return "
+	\\$(\\"".$vars["divLoading"]."\\").ajaxStart(
+				  function inicioEnvio(){ \\$(\\"".$vars["divLoading"]."\\").html(".$vars["loading"].") });
+";');
+$this->vars['LOADING2']['divResponse']='';
+$this->bfuncs['LOADING2']=create_function('$vars','return "
+	\\$(\\"".$vars["divResponse"]."\\").html(html);
+";');
+?>

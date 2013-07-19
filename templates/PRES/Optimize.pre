@@ -1,0 +1,17 @@
+<?
+$this->vars['MAIN']['INPUT_url']='';
+$this->vars['MAIN']['CSS']='';
+$this->vars['MAIN']['IMG']='';
+$this->bfuncs['MAIN']=create_function('$vars','return "<table style=\\"text-align: left; width: 100%;\\" cellpadding=\\"2\\" cellspacing=\\"2\\">
+  <tbody>
+    <tr>
+      <td colspan=\\"2\\" rowspan=\\"1\\">".$vars["INPUT_url"]."</td>
+    </tr>
+    <tr>
+      <td valign=\\"top\\" aling=\\"center\\">".$vars["CSS"]."</td>
+      <td valign=\\"top\\" aling=\\"center\\">".$vars["IMG"]."</td>
+    </tr>
+  </tbody>
+</table>
+";');
+?>

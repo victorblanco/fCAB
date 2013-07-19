@@ -1,0 +1,12 @@
+<?
+$this->vars['MAIN']['action']='';
+$this->vars['MAIN']['submit']='';
+$this->vars['MAIN']['name']='';
+$this->vars['MAIN']['id']='';
+$this->vars['MAIN']['method']='';
+$this->vars['MAIN']['CONTENT']='';
+$this->bfuncs['MAIN']=create_function('$vars','return "<form action=\\"".$vars["action"]."\\" onSubmit=\\"".$vars["submit"]."\\" name=\\"".$vars["name"]."\\" id=\\"".$vars["id"]."\\" method=\\"".$vars["method"]."\\">
+".$vars["CONTENT"]."
+</form>
+";');
+?>

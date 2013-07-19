@@ -1,0 +1,14 @@
+<?
+$this->vars['MAIN']['{action']='';
+$this->vars['MAIN']['{alt']='';
+$this->vars['MAIN']['{name']='';
+$this->vars['MAIN']['{img2']='';
+$this->vars['MAIN']['{name']='';
+$this->vars['MAIN']['{img']='';
+$this->vars['MAIN']['{alt']='';
+$this->vars['MAIN']['{name']='';
+$this->vars['MAIN']['{width']='';
+$this->vars['MAIN']['{height']='';
+$this->bfuncs['MAIN']=create_function('$vars','return "<a href=\\"javascript:".$vars["{action"]."\\" title=\\"".$vars["{alt"]."\\" onMouseOut=\\"MM_swapImgRestore()\\" onMouseOver=\\"MM_swapImage(\'".$vars["{name"]."\',\'\',\'".$vars["{img2"]."\',1)\\" id=\\"".$vars["{name"]."\\" ><img src=\\"".$vars["{img"]."\\" alt=\\"".$vars["{alt"]."\\" name=\\"".$vars["{name"]."\\" width=\\"".$vars["{width"]."\\" height=\\"".$vars["{height"]."\\" border=\\"0\\"></a>
+";');
+?>

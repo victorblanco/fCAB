@@ -1,0 +1,1 @@
+<a href="javascript:<!-- {action} -->" title="<!-- {alt} -->" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('<!-- {name} -->','','<!-- {img2} -->',1)" id="<!-- {name} -->" ><img src="<!-- {img} -->" alt="<!-- {alt} -->" name="<!-- {name} -->"   border="0"></a>

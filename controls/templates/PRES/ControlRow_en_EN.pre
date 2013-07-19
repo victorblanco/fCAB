@@ -1,0 +1,25 @@
+<?
+$this->vars['MAIN']['td']='';
+$this->vars['MAIN']['mouse_over']='';
+$this->vars['MAIN']['tr_action']='';
+$this->vars['MAIN']['tr_class']='';
+$this->vars['MAIN']['mouseover']='';
+$this->vars['MAIN']['tds']='';
+$this->bfuncs['MAIN']=create_function('$vars','return "".$vars["td"]."
+
+".$vars["mouse_over"]."
+
+<tr onClick=\\"".$vars["tr_action"]."\\" class=\\"".$vars["tr_class"]."\\" style=\\"cursor:pointer; .cursor:hand\\" ".$vars["mouseover"]." >
+	".$vars["tds"]."
+</tr>
+";');
+$this->vars['td']['td_class']='';
+$this->vars['td']['td_extras']='';
+$this->vars['td']['content']='';
+$this->bfuncs['td']=create_function('$vars','return "
+<td class=\\"".$vars["td_class"]."\\" ".$vars["td_extras"].">".$vars["content"]."</td>
+";');
+$this->bfuncs['mouse_over']=create_function('$vars','return "
+bgcolor=\\"#DCDDDD\\" onMouseOver=\\"this.style.backgroundColor=\'#A5BDD4\'\\" onMouseOut=\\"this.style.backgroundColor=\'#DCDDDD\'\\"
+";');
+?>

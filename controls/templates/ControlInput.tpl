@@ -1,0 +1,1 @@
+<input type="<!-- {type} -->" name="<!-- {name} -->" onChange="<!-- {onChange} -->" onBlur="<!-- {onBlur} -->" id="<!-- {id} -->" <!-- {disabled} --> onClick="<!-- {onClick} -->" value="<!-- {value} -->" class="<!-- {class} -->">

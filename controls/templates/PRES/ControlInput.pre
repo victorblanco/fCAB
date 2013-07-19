@@ -1,0 +1,13 @@
+<?
+$this->vars['MAIN']['type']='';
+$this->vars['MAIN']['name']='';
+$this->vars['MAIN']['onChange']='';
+$this->vars['MAIN']['onBlur']='';
+$this->vars['MAIN']['id']='';
+$this->vars['MAIN']['disabled']='';
+$this->vars['MAIN']['onClick']='';
+$this->vars['MAIN']['value']='';
+$this->vars['MAIN']['class']='';
+$this->bfuncs['MAIN']=create_function('$vars','return "<input type=\\"".$vars["type"]."\\" name=\\"".$vars["name"]."\\" onChange=\\"".$vars["onChange"]."\\" onBlur=\\"".$vars["onBlur"]."\\" id=\\"".$vars["id"]."\\" ".$vars["disabled"]." onClick=\\"".$vars["onClick"]."\\" value=\\"".$vars["value"]."\\" class=\\"".$vars["class"]."\\">
+";');
+?>

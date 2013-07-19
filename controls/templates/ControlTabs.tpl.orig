@@ -1,0 +1,38 @@
+
+	<!-- @ JAVASCRIPT @ -->
+	<script type="text/javascript" src="./js/tabs.js"></script>
+	<!-- @ JAVASCRIPT @ -->
+	
+	<!-- @ CSSS @ -->
+		<link href="./css/tabs.css" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 7]>
+			<link rel="stylesheet" href="./css/tabs-ie.css" type="text/css" media="projection, screen" />
+		<![endif]-->
+	<!-- @ CSSS @ -->
+	
+	
+	<!-- {js} -->
+	<!-- {css} -->
+
+
+<div id="<!-- {name} -->">
+	<ul class="anchors">
+		<!-- @ TAB @ -->
+		<li><a href="<!-- {title} -->"><!-- {title} --></a></li>
+		<!-- @ TAB @ -->
+		<!-- {tabs} -->
+	</ul>
+	<!-- {contents} -->
+
+	<!-- @ CONTENT @ -->
+	<div id="<!-- {title} -->" class="anchor">
+		<!-- {content} -->
+	</div>
+	<!-- @ CONTENT @ -->
+</div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.tabs("<!-- {name} -->");
+	  
+	});
+</script>

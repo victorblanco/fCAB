@@ -1,0 +1,18 @@
+<?
+$this->vars['MAIN']['name']='';
+$this->vars['MAIN']['event']='';
+$this->vars['MAIN']['class']='';
+$this->vars['MAIN']['onChange']='';
+$this->vars['MAIN']['ROW']='';
+$this->vars['MAIN']['rows']='';
+$this->bfuncs['MAIN']=create_function('$vars','return "<select name=\\"".$vars["name"]."\\" ".$vars["event"]." class=\\"".$vars["class"]."\\" onChange=\\"".$vars["onChange"]."\\">
+	".$vars["ROW"]."
+	".$vars["rows"]."
+</select>";');
+$this->vars['ROW']['id']='';
+$this->vars['ROW']['selected']='';
+$this->vars['ROW']['value']='';
+$this->bfuncs['ROW']=create_function('$vars','return "
+	<option value=\\"".$vars["id"]."\\" ".$vars["selected"]." >".$vars["value"]."</option>
+	";');
+?>

@@ -1,0 +1,42 @@
+<?
+$this->vars['MAIN']['JAVASCRIPT']='';
+$this->vars['MAIN']['CSSS']='';
+$this->vars['MAIN']['js']='';
+$this->vars['MAIN']['css']='';
+$this->vars['MAIN']['name']='';
+$this->vars['MAIN']['TABS']='';
+$this->vars['MAIN']['tabs']='';
+$this->vars['MAIN']['name']='';
+$this->vars['MAIN']['names']='';
+$this->bfuncs['MAIN']=create_function('$vars','return "
+	".$vars["JAVASCRIPT"]."
+	
+	".$vars["CSSS"]."
+	
+	
+	".$vars["js"]."
+	".$vars["css"]."
+
+
+<div id=\\"".$vars["name"]."\\">
+	".$vars["TABS"]."
+	".$vars["tabs"]."
+</div>
+<script type=\\"text/javascript\\">
+	initTabs(\'".$vars["name"]."\',Array(".$vars["names"]."),0,\\"100%\\",\\"100%\\");
+</script>
+";');
+$this->bfuncs['JAVASCRIPT']=create_function('$vars','return "
+	<script type=\\"text/javascript\\" src=\\"./js/jquery.js\\"></script>
+	<script type=\\"text/javascript\\" src=\\"./js/tabs/tab-view.js\\"></script>
+	";');
+$this->bfuncs['CSSS']=create_function('$vars','return "
+		<link href=\\"./css/tab-view.css\\" rel=\\"stylesheet\\" type=\\"text/css\\" />
+	";');
+$this->vars['TABS']['content']='';
+$this->bfuncs['TABS']=create_function('$vars','return "
+	<div class=\\"dhtmlgoodies_aTab\\" >
+		".$vars["content"]."
+	</div>
+	";');
+?>

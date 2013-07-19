@@ -1,0 +1,3 @@
+<!-- @ SIN_TRADUCCION @ -->background-color: #f4545c<!-- @ SIN_TRADUCCION @ -->
+<!-- @ CON_TRADUCCION @ -->background-color: #b4e8ad<!-- @ CON_TRADUCCION @ -->
+<span ><!-- {txt} --><a style='<!-- {style} -->; width:10px; ' onClick='javascript:window.open(this.href,"Itt","menubar=no,resizable=no,status=no,toolbar=no,scrollbars=no,height=300,width=500");return false; ' href="./app/Itt?clave=<!-- {clave} -->&dominio=<!-- {dominio} -->"> + </a></span>

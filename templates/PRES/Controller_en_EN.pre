@@ -1,0 +1,56 @@
+<?
+$this->vars['MAIN']['BASE']='';
+$this->vars['MAIN']['title']='';
+$this->vars['MAIN']['JS']='';
+$this->vars['MAIN']['CSS']='';
+$this->vars['MAIN']['js']='';
+$this->vars['MAIN']['css']='';
+$this->vars['MAIN']['language']='';
+$this->vars['MAIN']['title']='';
+$this->vars['MAIN']['description']='';
+$this->vars['MAIN']['keywords']='';
+$this->vars['MAIN']['preload']='';
+$this->vars['MAIN']['onLoad']='';
+$this->vars['MAIN']['toolbar']='';
+$this->vars['MAIN']['body']='';
+$this->vars['MAIN']['iframe']='';
+$this->bfuncs['MAIN']=create_function('$vars','return "<!DOCTYPE html PUBLIC \\"-//W3C//DTD XHTML 1.0 Transitional//EN\\" \\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\\">
+<html xmlns=\\"http://www.w3.org/1999/xhtml\\">
+<head>
+	<base href=\\"".$vars["BASE"]."\\" />
+	
+	<meta http-equiv=\\"content-type\\" content=\\"text/html; charset=iso-8859-1\\" />
+	<title>".$vars["title"]."</title>
+	".$vars["JS"]."
+	
+	".$vars["CSS"]."
+	".$vars["js"]."
+	".$vars["css"]."
+	
+	<meta http-equiv=\\"cache-control\\" content=\\"no-cache\\" />
+	<meta http-equiv=\\"Content-Language\\" content=\\"".$vars["language"]."\\" />
+	<meta name=\\"resource-type\\" content=\\"document\\" />
+	<meta name=\\"robots\\" content=\\"index, follow\\" />
+	<meta name=\\"distribution\\" content=\\"global\\" />
+	<meta name=\\"revisit-after\\" content=\\"14 Days\\"/>
+	<meta name=\\"author\\" content=\\"Ayrasoftware consulting\\"/>
+	<meta name=\\"title\\" content=\\"".$vars["title"]."\\"/>
+	<meta name=\\"description\\" content=\\"".$vars["description"]."\\"/>
+	<meta name=\\"keywords\\" content=\\"".$vars["keywords"]."\\"/>
+	<link href=\\"css/tema_azul.css\\" rel=\\"stylesheet\\" type=\\"text/css\\" />
+	<script type=\\"text/javascript\\" src=\\"js/comun.js\\"></script>
+</head>
+".$vars["preload"]."
+<body class=\\"bgNormal\\" marginheight=\\"0\\" marginwidth=\\"0\\" leftmargin=\\"0\\" topmargin=\\"0\\" onload=\\"".$vars["onLoad"]."\\"><table style=\\"width: 100%\\" cellspacing=\\"0\\" cellpadding=\\"0\\">".$vars["toolbar"]."<tr><td style=\\"width: 100%\\">".$vars["body"]."</td></tr><tr><td>".$vars["iframe"]." </td></tr></table>
+</body></html>
+";');
+$this->vars['JS']['js']='';
+$this->bfuncs['JS']=create_function('$vars','return "
+	<script type=\\"text/javascript\\" src=\\"".$vars["js"]."\\"></script>";');
+$this->vars['CSS']['css']='';
+$this->bfuncs['CSS']=create_function('$vars','return "
+	<link href=\\"".$vars["css"]."\\" rel=\\"stylesheet\\" type=\\"text/css\\" />";');
+$this->vars['preload']['preload_img']='';
+$this->bfuncs['preload']=create_function('$vars','return "
+	MM_preloadImages(".$vars["preload_img"].");";');
+?>

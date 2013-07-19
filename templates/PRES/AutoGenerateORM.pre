@@ -1,0 +1,67 @@
+<?
+$this->vars['MAIN']['clase']='';
+$this->vars['MAIN']['table']='';
+$this->vars['MAIN']['FIELD']='';
+$this->vars['MAIN']['fields']='';
+$this->vars['MAIN']['PK']='';
+$this->vars['MAIN']['pks']='';
+$this->vars['MAIN']['VALUE']='';
+$this->vars['MAIN']['values']='';
+$this->bfuncs['MAIN']=create_function('$vars','return "<?php
+
+/**
+* AUTO-GENERATED. DO NOT MODIFY THIS FILE.
+* Package: ORM
+*/
+
+class ".$vars["clase"]." extends ActiveRecord {
+
+	protected static \\$table = \'".$vars["table"]."\';
+
+	protected  \\$fields = array(
+			".$vars["FIELD"]."
+			".$vars["fields"]."
+			);
+
+	protected  \\$pkFields = array(
+			".$vars["PK"]."
+			".$vars["pks"]."
+			);
+
+	protected \\$values = array(
+			".$vars["VALUE"]."
+			".$vars["values"]."
+			);
+	
+	public static function getTable(){
+		return self::\\$table;
+	}
+	
+	public static function getDS() {
+		return App::getDS(\\"DEFAULT\\");
+	}
+
+	public static function getClass(){
+		return __class__;
+	}
+	
+	public static function getDefault(){
+		\\$temp = self::getClass();
+		return new \\$temp();
+	}
+}
+";');
+$this->vars['FIELD']['coma']='';
+$this->vars['FIELD']['name']='';
+$this->vars['FIELD']['dbname']='';
+$this->bfuncs['FIELD']=create_function('$vars','return " ".$vars["coma"]."\'".$vars["name"]."\'				=> \'".$vars["dbname"]."\'
+			";');
+$this->vars['PK']['coma']='';
+$this->vars['PK']['name']='';
+$this->bfuncs['PK']=create_function('$vars','return " ".$vars["coma"]."\'".$vars["name"]."\'
+			";');
+$this->vars['VALUE']['coma']='';
+$this->vars['VALUE']['name']='';
+$this->bfuncs['VALUE']=create_function('$vars','return " ".$vars["coma"]."\'".$vars["name"]."\'				=> null
+			";');
+?>

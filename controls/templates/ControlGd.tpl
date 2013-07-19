@@ -1,0 +1,1 @@
+<img style="vertical-align:middle" src="img/gd.php?txt=<!-- {selected} -->" /> <input type="text" style="border:solid 1px #999999; width:55px; vertical-align:middle;" name="<!-- {name} -->">

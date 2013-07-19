@@ -1,0 +1,62 @@
+<?
+$this->vars['MAIN']['clase']='';
+$this->vars['MAIN']['clase']='';
+$this->vars['MAIN']['clase']='';
+$this->vars['MAIN']['clase']='';
+$this->vars['MAIN']['rows']='';
+$this->vars['MAIN']['ROW']='';
+$this->bfuncs['MAIN']=create_function('$vars','return "<?php
+
+/**
+* class ".$vars["clase"]."RS
+* 
+* Clase que extiende de RecordSet y gestiona
+* las querys y sus filtros		
+*
+*
+*
+*
+*/
+
+class ".$vars["clase"]."RS extends RecordSet implements IFactory{
+
+	public function sql(\\$filters = null){
+		return \\"Select * from \\" . ".$vars["clase"]."ORM::getTable() . \\"  
+				where 1 \\" .\\$this->makeWhere(\\$filters).\\"  \\".\\$this->makeOrder().\\" \\".\\$this->makeLimit();
+	}
+	
+	/**
+	*	@Description: Singleton method
+	*
+	*/
+	public static function getDefault(){
+		static \\$i = null;
+		
+		if( is_null(\\$i) ){
+			\\$i = new ".$vars["clase"]."RS();
+		}
+		return \\$i;
+	}
+
+	/**
+	*	@Description: Crea los filtros
+	*
+	*/
+	protected function makeWhere(\\$filters){
+	
+		if (is_null(\\$filters)) return null;
+		
+		\\$where = null;
+		".$vars["rows"]."
+		
+		".$vars["ROW"]."
+		return \\$where;
+	}
+	
+}";');
+$this->vars['ROW']['campo']='';
+$this->vars['ROW']['campo']='';
+$this->vars['ROW']['campo']='';
+$this->bfuncs['ROW']=create_function('$vars','return "
+		if(!is_null(\\$filters->".$vars["campo"].")) \\$where .= \\" AND ".$vars["campo"]." =\'\\".\\$filters->".$vars["campo"].".\\"\' \\";";');
+?>

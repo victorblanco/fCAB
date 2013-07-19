@@ -1,0 +1,11 @@
+<?
+$this->vars['MAIN']['{ejecucion']='';
+$this->vars['MAIN']['{tabs']='';
+$this->bfuncs['MAIN']=create_function('$vars','return "<table >
+	<tr>
+		<td width=\\"30%\\"><div style=\\"height: 700px; overflow: auto;\\">".$vars["{ejecucion"]."</div></td>
+		<td valign=\\"top\\" width=\\"70%\\"><div id=\\"contentAjax\\">".$vars["{tabs"]."</div></td>
+	</tr>
+</table>
+";');
+?>
